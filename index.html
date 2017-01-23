@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jukebox Documentation</title>
+        <meta charset="UTF-8" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <style>
+        html, body {
+            font-family: 'Open Sans';
+        }
+
+        body {
+            max-width: 760px;
+            margin: 0px auto;
+            padding: 40px 0px;
+        }
+
+        h1 span {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none !important;
+            color: #5764c6;
+        }
+
+        a:hover {
+            border-bottom: 1px dotted #5764c6;
+        }
+
+        pre {
+            padding: 20px;
+            background: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        code {
+            background: #f2f2f2;
+            padding: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            width: 50%;
+        }
+
+        th {
+            background: #f2f2f2;
+        }
+        </style>
+    </head>
+    <body>
+        <article>
+            <h1>白いジューク<span>White Juke, a Discord Music Bot</span></h1>
+            <h2>Jukebox Documentation</h2>
+            <p><strong>Author</strong> 愛美#5352</p>
+            <p><strong>Manager</strong> 愛美#5352</p>
+            <p><strong>Credit</strong></p>
+            <ul>
+                <li>SexualRhinoceros (MusicBot in use by Tsubasa Jukebox)</li>
+                <li>abalabahaha (Eris Node.js Discord library)</li>
+            </ul>
+            <h2 id="table-of-contents">Table of Contents</h2>
+            <p><a href="#general-bot-information">General Bot Information</a>
+                <br />
+                <a href="#server-specifications">Server Specifications</a>
+                <br />
+                <a href="#jukebox-commands">Jukebox Commands</a>
+            </p>
+            <ul>
+                <li><a href="#show-help">Show Help</a></li>
+                <li><a href="play-song-youtube-guild-only-">Play Song (YouTube)</a></li>
+                <li><a href="#join-voice-channel-guild-only-">Join Voice Channel</a></li>
+                <li><a href="#skip-song-guild-only-">Skip Song</a></li>
+                <li><a href="#remove-song-guild-only-">Remove Song</a></li>
+                <li><a href="#change-volume-guild-only-">Change Volume</a></li>
+                <li><a href="#show-queue-guild-only-">Show Queue</a></li>
+                <li><a href="#show-now-playing-guild-only-">Show Now Playing</a></li>
+                <li><a href="#search-youtube-guild-only-">Search YouTube</a></li>
+                <li><a href="#shuffle-guild-only-">Shuffle Playlist</a></li>
+                <li><a href="#leave-channel-guild-only-">Leave Channel</a></li>
+                <li><a href="#show-information">Show Information</a></li>
+            </ul>
+            <p><a href="#advanced-commands">Advanced Commands</a></p>
+            <ul>
+                <li><a href="#remove-advanced-guild-only-">Remove (Advanced)</a></li>
+            </ul>
+            <h2 id="general-bot-information">General Bot Information</h2>
+            <aside class="warning">
+                <p>Jukebox is only intended for single-server use.</p>
+            </aside>
+            <!-- md regex parses $ as $ -->
+            <p><strong>Bot Name</strong> <code>Prefix</code></p>
+            <ul>
+                <li>Bot Information</li>
+            </ul>
+            <p><strong>Tsubasa Jukebox</strong> <code>$$</code></p>
+            <ul>
+                <li><strong>Server</strong> 1</li>
+                <li><strong>Bot</strong> SexyRhin0</li>
+                <li><strong>Commands</strong> <a href="https://github.com/Just-Some-Bots/MusicBot/wiki/Commands">https://github.com/Just-Some-Bots/MusicBot/wiki/Commands</a></li>
+                <li><strong>Invite</strong> <a href="https://discordapp.com/oauth2/authorize?&client_id=272187708817014785&scope=bot&permissions=0">Here</a>
+                <li>Tsubasa will start using Jukebox pending it works well enough for Backup</li>
+            </ul>
+            <p><strong>Backup Jukebox</strong> <code>!!</code></p>
+            <ul>
+                <li><strong>Server</strong> 2</li>
+                <li><strong>Bot</strong> Jukebox</li>
+                <li><strong>Commands</strong> Below</li>
+                <li><strong>Invite</strong> <a href="https://discordapp.com/oauth2/authorize?&client_id=272429146385154058&scope=bot&permissions=0">Here</a>
+            </ul>
+            <h2 id="server-specifications">Server Specifications</h2>
+            <p><strong>Server 1</strong></p>
+            <ul>
+                <li><strong>CPU</strong> Intel Xeon E5-2620 @ 2.00Ghz</li>
+                <li><strong>Memory</strong> 1GB</li>
+                <li><strong>Location</strong> NA - NYC</li>
+                <li><strong>Bandwidth</strong> 800 Mb/s - 200 Mb/s</li>
+                <li><strong>OS</strong> Ubuntu 16.04 LTS</li>
+            </ul>
+            <p><strong>Server 2</strong></p>
+            <ul>
+                <li><strong>CPU</strong> Intel i5-4690k @ 3.80Ghz</li>
+                <li><strong>Memory</strong> 32GB</li>
+                <li><strong>Location</strong> NA - NYC</li>
+                <li><strong>Bandwidth</strong> 25.27 Mb/s - 52.35 Mb/s (trying to get 400 - 200)</li>
+                <li><strong>OS Windows</strong> 7 Professional x64</li>
+            </ul>
+            <h2 id="jukebox-commands">Jukebox Commands</h2>
+            <h3 id="show-help">Show Help</h3>
+            <p>Show help information.</p>
+            <pre><code><span class="hljs-built_in">help</span>
+</code></pre>
+            <h3 id="play-song-youtube-guild-only-">Play Song (YouTube) (Guild Only)</h3>
+            <p>Adds a song/playlist to the playback queue.</p>
+            <pre><code><span class="hljs-keyword">play</span> &lt;youtube_url | <span class="hljs-keyword">string</span>&gt;
+</code></pre>
+            <h3 id="join-voice-channel-guild-only-">Join Voice Channel (Guild Only)</h3>
+            <p>Adds Jukebox to your current voice channel.</p>
+            <pre><code><span class="hljs-keyword">join</span>
+</code></pre>
+            <h3 id="skip-song-guild-only-">Skip Song (Guild Only)</h3>
+            <p>Skips the current song and plays the next song in the queue.</p>
+            <pre><code><span class="hljs-keyword">skip</span>
+</code></pre>
+            <h3 id="remove-song-guild-only-">Remove Song (Guild Only)</h3>
+            <p>Removes a song from the queue.</p>
+            <pre><code><span class="hljs-comment">remove &lt;songs | variadic (&lt;queue_position | number&gt;)&gt;</span>
+</code></pre>
+            <h3 id="change-volume-guild-only-">Change Volume (Guild Only)</h3>
+            <p>Changes the current volume of the bot. Volume must be 0-100 inclusive.</p>
+            <pre><code><span class="hljs-keyword">volume</span> <span class="bash">&lt;volume | number&gt;</span>
+</code></pre>
+            <h3 id="show-queue-guild-only-">Show Queue (Guild Only)</h3>
+            <p>Shows the current queue of songs to be played.</p>
+            <pre><code><span class="hljs-built_in">queue</span>
+</code></pre>
+            <h3 id="show-now-playing-guild-only-">Show Now Playing (Guild Only)</h3>
+            <p>Shows the currently playing song.</p>
+            <pre><code><span class="hljs-built_in">now</span>
+</code></pre>
+            <h3 id="search-youtube-guild-only-">Search YouTube (Guild Only)</h3>
+            <p>Searches YouTube.</p>
+            <pre><code>search &lt;query | <span class="hljs-type">variadic</span> (&lt;search_term | <span class="hljs-type">string</span>&gt;)&gt;
+</code></pre>
+            <h3 id="shuffle-guild-only-">Shuffle (Guild Only)</h3>
+            <p>Shuffle the current playlist.</p>
+            <pre><code>shuffle
+</code></pre>
+            <h3 id="leave-channel-guild-only-">Leave Channel (Guild Only)</h3>
+            <p>Leave the current voice channel and delete the current queue.</p>
+            <pre><code><span class="hljs-literal">leave</span>
+</code></pre>
+            <h3 id="show-information">Show Information</h3>
+            <p>Links to <a href="http://shiroi.moe">http://shiroi.moe</a> (this page).</p>
+            <pre><code><span class="hljs-built_in">info</span>
+</code></pre>
+            <h2 id="advanced-commands">Advanced Commands</h2>
+            <h3 id="remove-advanced-guild-only-">Remove (Advanced) (Guild Only)</h3>
+            <p>There is an advanced remove command available for those who want it.</p>
+            <pre><code><span class="hljs-comment">remove &lt;remove &lt;filters | variadic (&lt;filter_token | string&gt;)&gt;</span>
+</code></pre>
+            <p>The following will remove all songs that have a queue number greater than or equal to 10, or have a length less than 3 minutes. </p>
+            <pre><code><span class="hljs-comment">remove number &gt;= 10 or length &lt; (60 * 3)</span>
+</code></pre>
+            <p>The following variables are available for use in filters:</p>
+            <ul>
+                <li><strong>title</strong> Song title</li>
+                <li><strong>requester_id</strong> The ID of the user who requested the song</li>
+                <li><strong>requester</strong> The user who requested the song (this should be a mention)</li>
+                <li><strong>length</strong> The length of the song in seconds</li>
+                <li><strong>number</strong> The number of the song in the queue</li>
+                <li><strong>me</strong> Magic variable that represents you</li>
+            </ul>
+            <p>The following operators are available for use in filters:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Numeric arithmetic</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>x + y</td>
+                        <td>Add</td>
+                    </tr>
+                    <tr>
+                        <td>x - y</td>
+                        <td>Subtract</td>
+                    </tr>
+                    <tr>
+                        <td>x * y</td>
+                        <td>Multiply</td>
+                    </tr>
+                    <tr>
+                        <td>x / y</td>
+                        <td>Divide</td>
+                    </tr>
+                    <tr>
+                        <td>x % y</td>
+                        <td>Modulo</td>
+                    </tr>
+                    <tr>
+                        <td>x ^ y</td>
+                        <td>Power</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Comparisons</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>x == y</td>
+                        <td>Equals</td>
+                    </tr>
+                    <tr>
+                        <td>x &lt; y</td>
+                        <td>Less than</td>
+                    </tr>
+                    <tr>
+                        <td>x &lt;= y</td>
+                        <td>Less than or equal to</td>
+                    </tr>
+                    <tr>
+                        <td>x &gt; y</td>
+                        <td>Greater than</td>
+                    </tr>
+                    <tr>
+                        <td>x &gt;= y</td>
+                        <td>Greater than or equal to</td>
+                    </tr>
+                    <tr>
+                        <td>x ~= y</td>
+                        <td>Regular expression match</td>
+                    </tr>
+                    <tr>
+                        <td>x in (a, b, c)</td>
+                        <td>Equivalent to (x == a or x == b or x == c)</td>
+                    </tr>
+                    <tr>
+                        <td>x not in (a, b, c)</td>
+                        <td>Equivalent to (x != a and x != b and x != c)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Boolean logic</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>x or y</td>
+                        <td>Boolean or</td>
+                    </tr>
+                    <tr>
+                        <td>x and y</td>
+                        <td>Boolean and</td>
+                    </tr>
+                    <tr>
+                        <td>not x</td>
+                        <td>Boolean not</td>
+                    </tr>
+                    <tr>
+                        <td>x ? y : z</td>
+                        <td>If boolean x, value y, else z</td>
+                    </tr>
+                    <tr>
+                        <td>( x )</td>
+                        <td>Explicity operator precedence</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>The following functions are available for use in filters:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>abs(x)</td>
+                        <td>Absolute value</td>
+                    </tr>
+                    <tr>
+                        <td>ceil(x)</td>
+                        <td>Round floating point up</td>
+                    </tr>
+                    <tr>
+                        <td>floor(x)</td>
+                        <td>Round floating point down</td>
+                    </tr>
+                    <tr>
+                        <td>log(x)</td>
+                        <td>Natural logarithm</td>
+                    </tr>
+                    <tr>
+                        <td>max(a, b, c...)</td>
+                        <td>Max value (variable length of args)</td>
+                    </tr>
+                    <tr>
+                        <td>min(a, b, c...)</td>
+                        <td>Min value (variable length of args)</td>
+                    </tr>
+                    <tr>
+                        <td>random()</td>
+                        <td>Random floating point from 0.0 to 1.0</td>
+                    </tr>
+                    <tr>
+                        <td>round(x)</td>
+                        <td>Round floating point</td>
+                    </tr>
+                    <tr>
+                        <td>sqrt(x)</td>
+                        <td>Square root</td>
+                    </tr>
+                    <tr>
+                        <td>contains(x, y)</td>
+                        <td>True if <strong>x</strong> contains <strong>y</strong> else false. (case-insensitive)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 id="more-examples-">More Examples:</h4>
+            <p>Remove songs added by 愛美#5352.</p>
+            <pre><code><span class="hljs-comment">remove requester == 愛美#5352</span>
+</code></pre>
+            <p>Remove songs added by 愛美#5352 or you.</p>
+            <pre><code><span class="hljs-comment">remove requester == 愛美#5352 or requester == me</span>
+</code></pre>
+            <p>Remove all even-numbered songs in the queue.</p>
+            <pre><code><span class="hljs-comment">remove number % 2 == 0</span>
+</code></pre>
+        </article>
+    </body>
+</html>
