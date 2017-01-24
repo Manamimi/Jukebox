@@ -15,6 +15,10 @@
             padding: 40px 0px;
         }
 
+        h1 {
+            font-size: 36px;
+        }
+
         h1 span {
             display: block;
             font-size: 14px;
@@ -94,10 +98,8 @@
                 <li><a href="#remove-advanced-guild-only-">Remove (Advanced)</a></li>
             </ul>
             <h2 id="general-bot-information">General Bot Information</h2>
-            <aside class="warning">
-                <p>Jukebox is only intended for single-server use.</p>
-            </aside>
-            <!-- md regex parses $ as $ -->
+            <p>Different Jukeboxes are provided so pick the one that works best for you.</p>
+            <p>Keep in mind that different Jukeboxes will have different YouTube regional restrictions.</p>
             <p><strong>Bot Name</strong> <code>Prefix</code></p>
             <ul>
                 <li>Bot Information</li>
@@ -107,15 +109,26 @@
                 <li><strong>Server</strong> 1</li>
                 <li><strong>Bot</strong> SexyRhin0</li>
                 <li><strong>Commands</strong> <a href="https://github.com/Just-Some-Bots/MusicBot/wiki/Commands">https://github.com/Just-Some-Bots/MusicBot/wiki/Commands</a></li>
-                <li><strong>Invite</strong> <a href="https://discordapp.com/oauth2/authorize?&client_id=272187708817014785&scope=bot&permissions=0">Here</a>
-                <li>Tsubasa will start using Jukebox pending it works well enough for Backup</li>
+                <li><strong>Invite</strong> <a href="/tsubasa">Here</a>
+                <li>Tsubasa will start using Jukebox pending it works well enough for NA</li>
             </ul>
-            <p><strong>Backup Jukebox</strong> <code>!!</code></p>
+            <p><strong>NA Jukebox</strong> <code>!!</code></p>
             <ul>
                 <li><strong>Server</strong> 2</li>
                 <li><strong>Bot</strong> Jukebox</li>
                 <li><strong>Commands</strong> Below</li>
-                <li><strong>Invite</strong> <a href="https://discordapp.com/oauth2/authorize?&client_id=272429146385154058&scope=bot&permissions=0">Here</a>
+                <li><strong>Invite</strong> <a href="/nyc">Here</a>
+            </ul>
+            <ul>
+                <li>Coming Soon!</li>
+            </ul>
+            <p><strong>EU Jukebox</strong> <code>!!</code></p>
+            <ul>
+                <li>Coming Soon!</li>
+            </ul>
+            <p><strong>JP Jukebox</strong> <code>!!</code></p>
+            <ul>
+                <li>Coming Soon!</li>
             </ul>
             <h2 id="server-specifications">Server Specifications</h2>
             <p><strong>Server 1</strong></p>
@@ -188,9 +201,6 @@
             <p>There is an advanced remove command available for those who want it.</p>
             <pre><code><span class="hljs-comment">remove &lt;remove &lt;filters | variadic (&lt;filter_token | string&gt;)&gt;</span>
 </code></pre>
-            <p>The following will remove all songs that have a queue number greater than or equal to 10, or have a length less than 3 minutes. </p>
-            <pre><code><span class="hljs-comment">remove number &gt;= 10 or length &lt; (60 * 3)</span>
-</code></pre>
             <p>The following variables are available for use in filters:</p>
             <ul>
                 <li><strong>title</strong> Song title</li>
@@ -203,170 +213,108 @@
             <p>The following operators are available for use in filters:</p>
             <table>
                 <thead>
-                    <tr>
-                        <th>Numeric arithmetic</th>
-                        <th>Description</th>
-                    </tr>
+                    <th>
+                        Operator
+                    </th>
+                    <th>
+                        Description
+                    </th>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>x + y</td>
-                        <td>Add</td>
+                        <td>
+                            <strong>x</strong> contains <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if <strong>x</strong> contains <strong>y</strong> (case-insensitive).
+                        </td>
                     </tr>
                     <tr>
-                        <td>x - y</td>
-                        <td>Subtract</td>
+                        <td>
+                            <strong>x</strong> is <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if <strong>x</strong> equals <strong>y</strong>.
+                        </td>
                     </tr>
                     <tr>
-                        <td>x * y</td>
-                        <td>Multiply</td>
+                        <td>
+                            <strong>x</strong> is not <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if <strong>x</strong> does not equal <strong>y</strong>.
+                        </td>
                     </tr>
                     <tr>
-                        <td>x / y</td>
-                        <td>Divide</td>
+                        <td>
+                            <strong>x</strong> > <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if <strong>x</strong> > <strong>y</strong>.
+                        </td>
                     </tr>
                     <tr>
-                        <td>x % y</td>
-                        <td>Modulo</td>
+                        <td>
+                            <strong>x</strong> >= <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if <strong>x</strong> >= <strong>y</strong>.
+                        </td>
                     </tr>
                     <tr>
-                        <td>x ^ y</td>
-                        <td>Power</td>
+                        <td>
+                            <strong>x</strong> < <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if <strong>x</strong> < <strong>y</strong>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>x</strong> <= <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if <strong>x</strong> <= <strong>y</strong>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>x</strong> and <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if <strong>x</strong> and <strong>y</strong> are both true.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>x</strong> or <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns true if either <strong>x</strong> or <strong>y</strong> or both are true.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>x</strong> mod <strong>y</strong>
+                        </td>
+                        <td>
+                            Returns the remainder of <strong>x</strong> divided by <strong>y</strong>.
+                        </td>
                     </tr>
                 </tbody>
             </table>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Comparisons</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>x == y</td>
-                        <td>Equals</td>
-                    </tr>
-                    <tr>
-                        <td>x &lt; y</td>
-                        <td>Less than</td>
-                    </tr>
-                    <tr>
-                        <td>x &lt;= y</td>
-                        <td>Less than or equal to</td>
-                    </tr>
-                    <tr>
-                        <td>x &gt; y</td>
-                        <td>Greater than</td>
-                    </tr>
-                    <tr>
-                        <td>x &gt;= y</td>
-                        <td>Greater than or equal to</td>
-                    </tr>
-                    <tr>
-                        <td>x ~= y</td>
-                        <td>Regular expression match</td>
-                    </tr>
-                    <tr>
-                        <td>x in (a, b, c)</td>
-                        <td>Equivalent to (x == a or x == b or x == c)</td>
-                    </tr>
-                    <tr>
-                        <td>x not in (a, b, c)</td>
-                        <td>Equivalent to (x != a and x != b and x != c)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Boolean logic</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>x or y</td>
-                        <td>Boolean or</td>
-                    </tr>
-                    <tr>
-                        <td>x and y</td>
-                        <td>Boolean and</td>
-                    </tr>
-                    <tr>
-                        <td>not x</td>
-                        <td>Boolean not</td>
-                    </tr>
-                    <tr>
-                        <td>x ? y : z</td>
-                        <td>If boolean x, value y, else z</td>
-                    </tr>
-                    <tr>
-                        <td>( x )</td>
-                        <td>Explicity operator precedence</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>The following functions are available for use in filters:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Function</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>abs(x)</td>
-                        <td>Absolute value</td>
-                    </tr>
-                    <tr>
-                        <td>ceil(x)</td>
-                        <td>Round floating point up</td>
-                    </tr>
-                    <tr>
-                        <td>floor(x)</td>
-                        <td>Round floating point down</td>
-                    </tr>
-                    <tr>
-                        <td>log(x)</td>
-                        <td>Natural logarithm</td>
-                    </tr>
-                    <tr>
-                        <td>max(a, b, c...)</td>
-                        <td>Max value (variable length of args)</td>
-                    </tr>
-                    <tr>
-                        <td>min(a, b, c...)</td>
-                        <td>Min value (variable length of args)</td>
-                    </tr>
-                    <tr>
-                        <td>random()</td>
-                        <td>Random floating point from 0.0 to 1.0</td>
-                    </tr>
-                    <tr>
-                        <td>round(x)</td>
-                        <td>Round floating point</td>
-                    </tr>
-                    <tr>
-                        <td>sqrt(x)</td>
-                        <td>Square root</td>
-                    </tr>
-                    <tr>
-                        <td>contains(x, y)</td>
-                        <td>True if <strong>x</strong> contains <strong>y</strong> else false. (case-insensitive)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h4 id="more-examples-">More Examples:</h4>
+            <h4 id="more-examples-">Examples:</h4>
+            <p>The following will remove all songs that have a queue number greater than or equal to 10, or have a length less than 3 minutes. </p>
+            <pre><code><span class="hljs-comment">remove number &gt;= 10 or length &lt; 180</span>
+</code></pre>
             <p>Remove songs added by 愛美#5352.</p>
-            <pre><code><span class="hljs-comment">remove requester == 愛美#5352</span>
+            <pre><code><span class="hljs-comment">remove requester is 愛美#5352</span>
 </code></pre>
             <p>Remove songs added by 愛美#5352 or you.</p>
-            <pre><code><span class="hljs-comment">remove requester == 愛美#5352 or requester == me</span>
+            <pre><code><span class="hljs-comment">remove requester is 愛美#5352 or requester is me</span>
 </code></pre>
             <p>Remove all even-numbered songs in the queue.</p>
-            <pre><code><span class="hljs-comment">remove number % 2 == 0</span>
+            <pre><code><span class="hljs-comment">remove number is even</span>
 </code></pre>
         </article>
     </body>
