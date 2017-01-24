@@ -1,128 +1,81 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Jukebox Documentation</title>
+        <title>ジュークボックス知識</title>
         <meta charset="UTF-8" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <style>
-        html, body {
-            font-family: 'Open Sans';
-        }
-
-        body {
-            max-width: 760px;
-            margin: 0px auto;
-            padding: 40px 0px;
-        }
-
-        h1 {
-            font-size: 36px;
-        }
-
-        h1 span {
-            display: block;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-        a {
-            text-decoration: none !important;
-            color: #5764c6;
-        }
-
-        a:hover {
-            border-bottom: 1px dotted #5764c6;
-        }
-
-        pre {
-            padding: 20px;
-            background: #f2f2f2;
-            border-radius: 4px;
-        }
-
-        code {
-            background: #f2f2f2;
-            padding: 4px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            width: 50%;
-        }
-
-        th {
-            background: #f2f2f2;
-        }
-        </style>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+        <link href="css/flag-icon.min.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
     </head>
     <body>
         <article>
-            <h1>白いジューク<span>White Juke, a Discord Music Bot</span></h1>
-            <h2>Jukebox Documentation</h2>
-            <p><strong>Author</strong> 愛美#5352</p>
-            <p><strong>Manager</strong> 愛美#5352</p>
-            <p><strong>Credit</strong></p>
+            <h1>
+                <aside>
+                    白いジューク<span>White Juke, a Discord Music Bot</span>
+                </aside>
+                <aside id="lang">
+                    <a href="index.html"><span class="flag-icon flag-icon-us"></span></a>
+                    <a href="help-jp.html"><span class="flag-icon flag-icon-jp"></span></a>
+                </aside>
+            </h1>
+            <h2>ジュークボックス知識</h2>
+            <p><strong>クリエーター</strong> 愛美#5352</p>
+            <p><strong>管理人</strong> 愛美#5352</p>
+            <p><strong>名誉</strong></p>
             <ul>
-                <li>SexualRhinoceros (MusicBot in use by Tsubasa Jukebox)</li>
                 <li>abalabahaha (Eris Node.js Discord library)</li>
             </ul>
             <h2 id="table-of-contents">Table of Contents</h2>
-            <p><a href="#general-bot-information">General Bot Information</a>
+            <p><a href="#general-bot-information">大体の知識</a>
                 <br />
-                <a href="#server-specifications">Server Specifications</a>
+                <a href="#server-specifications">サーバースペック</a>
                 <br />
-                <a href="#jukebox-commands">Jukebox Commands</a>
+                <a href="#jukebox-commands">ジュークのコマンド</a>
             </p>
             <ul>
-                <li><a href="#show-help">Show Help</a></li>
-                <li><a href="play-song-youtube-guild-only-">Play Song (YouTube)</a></li>
-                <li><a href="#join-voice-channel-guild-only-">Join Voice Channel</a></li>
-                <li><a href="#skip-song-guild-only-">Skip Song</a></li>
-                <li><a href="#remove-song-guild-only-">Remove Song</a></li>
-                <li><a href="#change-volume-guild-only-">Change Volume</a></li>
-                <li><a href="#show-queue-guild-only-">Show Queue</a></li>
-                <li><a href="#show-now-playing-guild-only-">Show Now Playing</a></li>
-                <li><a href="#search-youtube-guild-only-">Search YouTube</a></li>
-                <li><a href="#shuffle-guild-only-">Shuffle Playlist</a></li>
-                <li><a href="#leave-channel-guild-only-">Leave Channel</a></li>
-                <li><a href="#show-information">Show Information</a></li>
+                <li><a href="#show-help">コマンドリストを表示する</a></li>
+                <li><a href="play-song-youtube-guild-only-">プレイーソング (YouTube)</a></li>
+                <li><a href="#join-voice-channel-guild-only-">ボイスチャネルに入る</a></li>
+                <li><a href="#skip-song-guild-only-">スキップする</a></li>
+                <li><a href="#remove-song-guild-only-">曲を削除する</a></li>
+                <li><a href="#change-volume-guild-only-">音量を変更する</a></li>
+                <li><a href="#show-queue-guild-only-">キューを表示する</a></li>
+                <li><a href="#show-now-playing-guild-only-">プレイーしている曲を表示する</a></li>
+                <li><a href="#search-youtube-guild-only-">YouTubeを引く</a></li>
+                <li><a href="#shuffle-guild-only-">シャフルする</a></li>
+                <li><a href="#leave-channel-guild-only-">ボイスチャネルに出る</a></li>
+                <li><a href="#show-information">知識を表示する</a></li>
             </ul>
-            <p><a href="#advanced-commands">Advanced Commands</a></p>
+            <p><a href="#advanced-commands">アドバンスコマンド</a></p>
             <ul>
-                <li><a href="#remove-advanced-guild-only-">Remove (Advanced)</a></li>
+                <li><a href="#remove-advanced-guild-only-">曲を削除する (アドバンス)</a></li>
             </ul>
-            <h2 id="general-bot-information">General Bot Information</h2>
+            <h2 id="general-bot-information">大体の知識</h2>
             <p>まちまちのボットをあげるから、自分のための一番のを使ってください。</p>
-            <p><strong>Bot Name</strong> <code>Prefix</code></p>
+            <p><strong>名前</strong> <code>プリフィクス</code></p>
             <ul>
-                <li>Bot Information</li>
+                <li>ボットの知識</li>
             </ul>
             <p><strong>NA Jukebox</strong> <code>!!</code></p>
             <ul>
-                <li><strong>Server</strong> 2</li>
-                <li><strong>Bot</strong> Jukebox</li>
-                <li><strong>Commands</strong> Below</li>
-                <li><strong>Invite</strong> <a href="https://discordapp.com/oauth2/authorize?&client_id=272187708817014785&scope=bot&permissions=0">Here</a>
+                <li><strong>サーバ</strong> 2</li>
+                <li><strong>ボット</strong> Jukebox</li>
+                <li><strong>コマンド</strong> 以下</li>
+                <li><strong>招待のリンク</strong> <a href="https://discordapp.com/oauth2/authorize?&client_id=272187708817014785&scope=bot&permissions=0">ここ</a>
             </ul>
             <p><strong>EU Jukebox</strong> <code>$$</code></p>
             <ul>
-                <li><strong>Server</strong> 3</li>
-                <li><strong>Bot</strong> Jukebox</li>
-                <li><strong>Commands</strong> Below</li>
-                <li><strong>Invite</strong> <a href="https://discordapp.com/oauth2/authorize?&client_id=272429146385154058&scope=bot&permissions=0">Here</a>
+                <li><strong>サーバー</strong> 3</li>
+                <li><strong>ボット</strong> Jukebox</li>
+                <li><strong>コマンド</strong> 以下</li>
+                <li><strong>招待のリンク</strong> <a href="https://discordapp.com/oauth2/authorize?&client_id=272429146385154058&scope=bot&permissions=0">ここ</a>
             </ul>
             <p><strong>JP Jukebox</strong>
             <ul>
-                <li>Coming Soon!</li>
+                <li>もうすぐくる!</li>
             </ul>
-            <h2 id="server-specifications">Server Specifications</h2>
-            <p><strong>Server 1</strong></p>
+            <h2 id="server-specifications">サーバースペック</h2>
+            <p><strong>１番</strong></p>
             <ul>
                 <li><strong>CPU</strong> Intel Xeon E5-2620 @ 2.00Ghz</li>
                 <li><strong>Memory</strong> 1GB</li>
@@ -130,7 +83,7 @@
                 <li><strong>Bandwidth</strong> 800 Mb/s - 200 Mb/s</li>
                 <li><strong>OS</strong> Ubuntu 16.04 LTS</li>
             </ul>
-            <p><strong>Server 2</strong></p>
+            <p><strong>２番</strong></p>
             <ul>
                 <li><strong>CPU</strong> Intel i5-4690k @ 3.80Ghz</li>
                 <li><strong>Memory</strong> 32GB</li>
@@ -138,7 +91,7 @@
                 <li><strong>Bandwidth</strong> 25.27 Mb/s - 52.35 Mb/s (trying to get 400 - 200)</li>
                 <li><strong>OS Windows</strong> 7 Professional x64</li>
             </ul>
-            <p><strong>Server 3</strong></p>
+            <p><strong>3番</strong></p>
             <ul>
                 <li><strong>CPU</strong> Intel(R) Xeon(R) CPU E5-2630L v2 @ 2.40GHz</li>
                 <li><strong>Memory</strong> 0.5GB</li>
@@ -146,9 +99,9 @@
                 <li><strong>Bandwidth</strong> 800 Mb/s - 300 Mb/s</li>
                 <li><strong>OS Windows</strong> Ubuntu 16.04 LTS</li>
             </ul>
-            <h2 id="jukebox-commands">ジュックのコマンド</h2>
-            <h3 id="show-help">知識を表示</h3>
-            <p>知識を表示します.</p>
+            <h2 id="jukebox-commands">ジュークのコマンド</h2>
+            <h3 id="show-help">コマンドリストを表示する</h3>
+            <p>ボットのコマンド理sとを表示します.</p>
             <pre><code><span class="hljs-built_in">help</span>
 </code></pre>
             <h3 id="play-song-youtube-guild-only-">プレイソング (YouTube) (ギルドだけ)</h3>
@@ -168,7 +121,7 @@
             <pre><code><span class="hljs-comment">remove &lt;songs | variadic (&lt;queue_position | number&gt;)&gt;</span>
 </code></pre>
             <h3 id="change-volume-guild-only-">音量を変更する (ギルドだけ)</h3>
-            <p>音量を変更します。音量は０－１００以内はずです。</p>
+            <p>音量を変更します。音量は０－１００以内のはずです。</p>
             <pre><code><span class="hljs-keyword">volume</span> <span class="bash">&lt;volume | number&gt;</span>
 </code></pre>
             <h3 id="show-queue-guild-only-">キューを表示する (ギルドだけ)</h3>
@@ -204,7 +157,7 @@
             <ul>
                 <li><strong>title</strong> 曲のタイトル</li>
                 <li><strong>requester_id</strong> 曲を加えた方のID</li>
-                <li><strong>requester</strong> 曲を加えた方（メンションはずです)</li>
+                <li><strong>requester</strong> 曲を加えた方（メンションのはずです)</li>
                 <li><strong>length</strong> 秒で曲の期間</li>
                 <li><strong>number</strong> キューの曲の数</li>
                 <li><strong>me</strong> あなた</li>
